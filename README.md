@@ -37,7 +37,7 @@ to create an executable binary.
 
 Simple as
 ```
-➜  see git:(main) ./factorial_macos
+➜  ./factorial_macos
 Hello from Factorial!
 10 factorial is 3628800
 ```
@@ -67,13 +67,13 @@ objdump -d -h factorial_macos  > factorial_macos.lst
 I have docker desktop installed and started, so the docker daemon is running. 
 
 ```
-git:(main) docker --version
+➜  docker --version
 Docker version 20.10.10, build b485636
 ```
 
 I am using a container provided by gcc [https://hub.docker.com/_/gcc](https://hub.docker.com/_/gcc). I can enter bash within the container, mounting my project directory to `code` with
 ```
-docker run -it -v /Users/csamp/projects/see:/code gcc bash
+docker run -it -v /Users/csamp/projects/see:/code gcc:latest bash
 ```
 or execute commands and exit with
 ```
@@ -91,7 +91,7 @@ to create an executable binary.
 
 The structure of Debian executables is different than macos executables.
 ```
-➜  see git:(main) docker run --rm -t -v /Users/csamp/projects/see:/code -w /code gcc:latest ./factorial_debian
+➜  docker run --rm -t -v /Users/csamp/projects/see:/code -w /code gcc:latest ./factorial_debian
 Hello from Factorial!
 10 factorial is 3628800
 ```
