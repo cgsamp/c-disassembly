@@ -139,8 +139,8 @@ Here I have removed some assembler directives and commented on each assembler in
 	.string	"%d factorial is %d\n"
 
 	.text				# Beginning the text of the program instructions
-	.globl	_start			# Defines the memory location of the entry point
-_start:					# Location of the entry point
+	.globl	_start			# Declares the symbol _start as externally accessible
+_start:					# Sets _start to this stack location, which is the entrypoint
 	pushq	%rbp			# Push the quadword (64-bit, 8-byte) current stack base pointer onto the stack.
 	movq	%rsp, %rbp		# Move the current stack pointer into the base pointer register
 	subq	$16, %rsp		# Subtract 16 bytes from the current stack pointer to make room for two 8-byte variables
