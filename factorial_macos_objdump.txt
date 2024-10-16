@@ -1,0 +1,84 @@
+
+factorial_macos:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000100000f00 <_main>:
+   100000f00:	55                   	push   %rbp
+   100000f01:	48 89 e5             	mov    %rsp,%rbp
+   100000f04:	48 83 ec 10          	sub    $0x10,%rsp
+   100000f08:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100000f0f:	48 8d 3d 67 00 00 00 	lea    0x67(%rip),%rdi        # 100000f7d <_main+0x7d>
+   100000f16:	b0 00                	mov    $0x0,%al
+   100000f18:	e8 5a 00 00 00       	call   100000f77 <_main+0x77>
+   100000f1d:	c7 45 f8 0a 00 00 00 	movl   $0xa,-0x8(%rbp)
+   100000f24:	c7 45 f4 01 00 00 00 	movl   $0x1,-0xc(%rbp)
+   100000f2b:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%rbp)
+   100000f32:	8b 45 f0             	mov    -0x10(%rbp),%eax
+   100000f35:	3b 45 f8             	cmp    -0x8(%rbp),%eax
+   100000f38:	0f 8d 1d 00 00 00    	jge    100000f5b <_main+0x5b>
+   100000f3e:	8b 45 f4             	mov    -0xc(%rbp),%eax
+   100000f41:	8b 4d f0             	mov    -0x10(%rbp),%ecx
+   100000f44:	83 c1 01             	add    $0x1,%ecx
+   100000f47:	0f af c1             	imul   %ecx,%eax
+   100000f4a:	89 45 f4             	mov    %eax,-0xc(%rbp)
+   100000f4d:	8b 45 f0             	mov    -0x10(%rbp),%eax
+   100000f50:	83 c0 01             	add    $0x1,%eax
+   100000f53:	89 45 f0             	mov    %eax,-0x10(%rbp)
+   100000f56:	e9 d7 ff ff ff       	jmp    100000f32 <_main+0x32>
+   100000f5b:	8b 75 f8             	mov    -0x8(%rbp),%esi
+   100000f5e:	8b 55 f4             	mov    -0xc(%rbp),%edx
+   100000f61:	48 8d 3d 2c 00 00 00 	lea    0x2c(%rip),%rdi        # 100000f94 <_main+0x94>
+   100000f68:	b0 00                	mov    $0x0,%al
+   100000f6a:	e8 08 00 00 00       	call   100000f77 <_main+0x77>
+   100000f6f:	31 c0                	xor    %eax,%eax
+   100000f71:	48 83 c4 10          	add    $0x10,%rsp
+   100000f75:	5d                   	pop    %rbp
+   100000f76:	c3                   	ret
+
+Disassembly of section __TEXT.__stubs:
+
+0000000100000f77 <__TEXT.__stubs>:
+   100000f77:	ff 25 83 00 00 00    	jmp    *0x83(%rip)        # 100001000 <_main+0x100>
+
+Disassembly of section __TEXT.__unwind_info:
+
+0000000100000fa8 <__TEXT.__unwind_info>:
+   100000fa8:	01 00                	add    %eax,(%rax)
+   100000faa:	00 00                	add    %al,(%rax)
+   100000fac:	1c 00                	sbb    $0x0,%al
+   100000fae:	00 00                	add    %al,(%rax)
+   100000fb0:	00 00                	add    %al,(%rax)
+   100000fb2:	00 00                	add    %al,(%rax)
+   100000fb4:	1c 00                	sbb    $0x0,%al
+   100000fb6:	00 00                	add    %al,(%rax)
+   100000fb8:	00 00                	add    %al,(%rax)
+   100000fba:	00 00                	add    %al,(%rax)
+   100000fbc:	1c 00                	sbb    $0x0,%al
+   100000fbe:	00 00                	add    %al,(%rax)
+   100000fc0:	02 00                	add    (%rax),%al
+   100000fc2:	00 00                	add    %al,(%rax)
+   100000fc4:	00 0f                	add    %cl,(%rdi)
+   100000fc6:	00 00                	add    %al,(%rax)
+   100000fc8:	40 00 00             	rex add %al,(%rax)
+   100000fcb:	00 40 00             	add    %al,0x0(%rax)
+   100000fce:	00 00                	add    %al,(%rax)
+   100000fd0:	77 0f                	ja     100000fe1 <_main+0xe1>
+   100000fd2:	00 00                	add    %al,(%rax)
+   100000fd4:	00 00                	add    %al,(%rax)
+   100000fd6:	00 00                	add    %al,(%rax)
+   100000fd8:	40 00 00             	rex add %al,(%rax)
+	...
+   100000fe7:	00 03                	add    %al,(%rbx)
+   100000fe9:	00 00                	add    %al,(%rax)
+   100000feb:	00 0c 00             	add    %cl,(%rax,%rax,1)
+   100000fee:	01 00                	add    %eax,(%rax)
+   100000ff0:	10 00                	adc    %al,(%rax)
+   100000ff2:	01 00                	add    %eax,(%rax)
+   100000ff4:	00 00                	add    %al,(%rax)
+   100000ff6:	00 00                	add    %al,(%rax)
+   100000ff8:	00 00                	add    %al,(%rax)
+   100000ffa:	00 01                	add    %al,(%rcx)
+   100000ffc:	00 00                	add    %al,(%rax)
+	...
